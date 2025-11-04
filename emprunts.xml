@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emprunts xmlns="http://example.org/bibliotheque">
+  <emprunt>
+    <isbn>978-1234567890</isbn>
+    <matricule>ETU-0001</matricule>
+    <dateEmprunt>2025-10-01</dateEmprunt>
+    <dateRetourPrevue>2025-10-15</dateRetourPrevue>
+  </emprunt>
+</emprunts>

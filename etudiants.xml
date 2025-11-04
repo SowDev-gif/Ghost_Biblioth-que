@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<etudiants xmlns="http://example.org/bibliotheque">
+  <etudiant>
+    <matricule>ETU-0001</matricule>
+    <nom>Sow</nom>
+    <prenom>Papa</prenom>
+    <email>papa@example.org</email>
+    <niveau>L3</niveau>
+  </etudiant>
+</etudiants>

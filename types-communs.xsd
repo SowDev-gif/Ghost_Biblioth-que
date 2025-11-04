@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.org/types-communs"
+           xmlns="http://example.org/types-communs"
+           elementFormDefault="qualified"
+           xmlns:tns="http://example.org/types-communs">
+
+  <xs:complexType name="AuteurType">
+    <xs:sequence>
+      <xs:element name="nom" type="xs:string"/>
+      <xs:element name="prenom" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LivreType">
+    <xs:sequence>
+      <xs:element name="isbn" type="xs:string"/>
+      <xs:element name="titre" type="xs:string"/>
+      <xs:element name="auteurs" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="auteur" type="tns:AuteurType" maxOccurs="5"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="editeur" type="xs:string" minOccurs="0"/>
+      <xs:element name="annee" type="xs:gYear" minOccurs="0"/>
+      <xs:element name="categorie" type="xs:string" minOccurs="0"/>
+      <xs:element name="exemplairesDisponibles" type="xs:integer" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

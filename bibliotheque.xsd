@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.org/bibliotheque"
+           xmlns="http://example.org/bibliotheque"
+           elementFormDefault="qualified">
+
+  <xs:import namespace="http://example.org/types-communs" schemaLocation="types-communs.xsd"/>
+
+  <xs:element name="bibliotheque">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="catalogue"/>
+        <xs:element name="emprunts" type="EmpruntsType" minOccurs="0"/>
+        <xs:element name="etudiants" type="tns:EtudiantsListType" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="catalogue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="livre" type="tc:LivreType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="EmpruntsType">
+    <xs:sequence>
+      <xs:element name="emprunt" maxOccurs="unbounded" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="isbn" type="xs:string"/>
+            <xs:element name="matricule" type="xs:string"/>
+            <xs:element name="dateEmprunt" type="xs:date"/>
+            <xs:element name="dateRetourPrevue" type="xs:date" minOccurs="0"/>
+            <xs:element name="retard" type="xs:boolean" default="false"/>
+          </xs:sequence>
+          <xs:attribute name="id" type="xs:string" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EtudiantsListType" xmlns:tns="http://example.org/bibliotheque">
+    <xs:sequence>
+      <xs:element name="etudiant" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="matricule" type="xs:string"/>
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="prenom" type="xs:string"/>
+            <xs:element name="email" type="xs:string" minOccurs="0"/>
+            <xs:element name="niveau" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bibliotheque xmlns="http://example.org/bibliotheque"
+             xmlns:tc="http://example.org/types-communs">
+  <catalogue>
+    <tc:livre>
+      <tc:isbn>978-1234567890</tc:isbn>
+      <tc:titre>Introduction à XML</tc:titre>
+      <tc:auteurs>
+        <tc:auteur>
+          <tc:nom>Dupont</tc:nom>
+          <tc:prenom>Jean</tc:prenom>
+        </tc:auteur>
+      </tc:auteurs>
+      <tc:editeur>Presses Univ</tc:editeur>
+      <tc:annee>2020</tc:annee>
+      <tc:categorie>Informatique</tc:categorie>
+      <tc:exemplairesDisponibles>4</tc:exemplairesDisponibles>
+    </tc:livre>
+  </catalogue>
+  <emprunts>
+    <emprunt>
+      <isbn>978-1234567890</isbn>
+      <matricule>ETU-0001</matricule>
+      <dateEmprunt>2025-10-01</dateEmprunt>
+      <dateRetourPrevue>2025-10-15</dateRetourPrevue>
+    </emprunt>
+  </emprunts>
+  <etudiants>
+    <etudiant>
+      <matricule>ETU-0001</matricule>
+      <nom>Sow</nom>
+      <prenom>Papa</prenom>
+      <email>papa@example.org</email>
+      <niveau>L3</niveau>
+    </etudiant>
+  </etudiants>
+</bibliotheque>
